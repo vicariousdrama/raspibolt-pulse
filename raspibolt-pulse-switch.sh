@@ -433,7 +433,6 @@ fi
 
 if [ "${mockmode}" -eq 1 ]; then
   ln_alias="MyRaspiBolt-version3"
-  ln_sync="Not synced"
   ln_walletbalance="100000"
   ln_channelbalance="200000"
   ln_pendinglocal="50000"

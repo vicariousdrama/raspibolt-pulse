@@ -409,7 +409,7 @@ printf "%0.s#" {1..78}
 echo -ne '\r### Loading RTL data \r'
 
 #rtl
-rtl_running=$(systemctl is-active ridethelightning)
+rtl_running=$(systemctl is-active rtl)
 rtl_color="${color_green}"
 if [ -z "${rtl_running##*inactive*}" ]; then
   rtl_running="down"
@@ -418,7 +418,7 @@ if [ -z "${rtl_running##*inactive*}" ]; then
   rtlversion_color="${color_red}"
 else
   rtl_running="up"
-  rtlpi=v$(cd /home/ridethelightning/RTL; npm version | grep -oP "rtl: '\K(.*)(?=-beta')")
+  rtlpi=v$(cd /home/rtl/RTL; npm version | grep -oP "rtl: '\K(.*)(?=-beta')")
   if [ "$rtlpi" = "$rtlgit" ]; then
     rtlversion="$rtlpi"
     rtlversion_color="${color_green}"
